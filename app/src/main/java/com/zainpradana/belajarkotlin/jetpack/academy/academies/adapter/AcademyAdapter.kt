@@ -1,4 +1,4 @@
-package com.zainpradana.belajarkotlin.jetpack.academy.academy.adapter
+package com.zainpradana.belajarkotlin.jetpack.academy.academies.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater

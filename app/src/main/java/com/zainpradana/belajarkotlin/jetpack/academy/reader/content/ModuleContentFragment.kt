@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.zainpradana.belajarkotlin.jetpack.academy.R
+import com.zainpradana.belajarkotlin.jetpack.academy.academies.viewmodel.ViewModelFactory
 import com.zainpradana.belajarkotlin.jetpack.academy.data.ContentEntity
 import com.zainpradana.belajarkotlin.jetpack.academy.data.ModuleEntity
 import com.zainpradana.belajarkotlin.jetpack.academy.databinding.FragmentModuleContentBinding
@@ -36,7 +37,8 @@ class ModuleContentFragment : Fragment() {
         if (activity != null) {
 //            val content = ContentEntity("<h3 class=\\\"fr-text-bordered\\\">Contoh Content</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>")
 //            populateWebView(content)
-            val viewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory()) [CourseReaderViewModel::class.java]
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            val viewModel = ViewModelProvider(requireActivity(), factory) [CourseReaderViewModel::class.java]
             val module = viewModel.getSelectedModule()
             populateWebView(module)
         }

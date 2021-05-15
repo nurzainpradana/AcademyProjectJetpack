@@ -7,13 +7,13 @@ import org.junit.Test
 import org.junit.Assert.*
 
 class DetailCourseViewModelTest {
-    private lateinit var viewModel: DetailCouseViewModel
+    private lateinit var viewModel: DetailCourseViewModel
     private val dummyCourse = DataDummy.generatedDummyCourses()[0]
     private val courseId = dummyCourse.courseId
 
     @Before
     fun setUp() {
-        viewModel = DetailCouseViewModel()
+        viewModel = DetailCourseViewModel()
         viewModel.setSelectedCourse(courseId)
     }
 

@@ -1,4 +1,4 @@
-package com.zainpradana.belajarkotlin.jetpack.academy.academy.viewmodel
+package com.zainpradana.belajarkotlin.jetpack.academy.academies.viewmodel
 
 import org.junit.Test
 

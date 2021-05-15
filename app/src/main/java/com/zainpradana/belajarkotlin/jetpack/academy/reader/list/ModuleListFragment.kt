@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zainpradana.belajarkotlin.jetpack.academy.R
+import com.zainpradana.belajarkotlin.jetpack.academy.academies.viewmodel.ViewModelFactory
 import com.zainpradana.belajarkotlin.jetpack.academy.data.ModuleEntity
 import com.zainpradana.belajarkotlin.jetpack.academy.databinding.FragmentModuleListBinding
 import com.zainpradana.belajarkotlin.jetpack.academy.reader.CourseReaderActivity
@@ -42,7 +43,8 @@ class ModuleListFragment : Fragment(), MyAdapterClickListener {
         super.onViewCreated(view, savedInstanceState)
         adapter = ModuleListAdapter(this)
 
-        viewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory()) [CourseReaderViewModel::class.java]
+        val factory = ViewModelFactory.getInstance(requireActivity())
+        viewModel = ViewModelProvider(requireActivity(), factory) [CourseReaderViewModel::class.java]
         adapter = ModuleListAdapter(this)
 //        populateRecyclerView(DataDummy.generateDummyModules("a14"))
         populateRecyclerView(viewModel.getModules())

@@ -2,8 +2,6 @@ package com.zainpradana.belajarkotlin.jetpack.academy.detail
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -12,13 +10,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.zainpradana.belajarkotlin.jetpack.academy.R
+import com.zainpradana.belajarkotlin.jetpack.academy.academies.viewmodel.ViewModelFactory
 import com.zainpradana.belajarkotlin.jetpack.academy.data.CourseEntity
 import com.zainpradana.belajarkotlin.jetpack.academy.databinding.ActivityDetailCourseBinding
 import com.zainpradana.belajarkotlin.jetpack.academy.databinding.ContentDetailCourseBinding
 import com.zainpradana.belajarkotlin.jetpack.academy.detail.adapter.DetailCourseAdapter
-import com.zainpradana.belajarkotlin.jetpack.academy.detail.viewmodel.DetailCouseViewModel
+import com.zainpradana.belajarkotlin.jetpack.academy.detail.viewmodel.DetailCourseViewModel
 import com.zainpradana.belajarkotlin.jetpack.academy.reader.CourseReaderActivity
-import com.zainpradana.belajarkotlin.jetpack.academy.utils.DataDummy
 
 class DetailCourseActivity : AppCompatActivity() {
 
@@ -31,7 +29,8 @@ class DetailCourseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailCouseViewModel::class.java]
+        val factory = ViewModelFactory.getInstance(this)
+        val viewModel = ViewModelProvider(this, factory)[DetailCourseViewModel::class.java]
 
         val activityDetailCourseBinding = ActivityDetailCourseBinding.inflate(layoutInflater)
         detailContentBinding = activityDetailCourseBinding.detailContent

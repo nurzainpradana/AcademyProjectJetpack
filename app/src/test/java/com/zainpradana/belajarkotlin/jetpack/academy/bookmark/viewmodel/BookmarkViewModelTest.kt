@@ -16,7 +16,7 @@ class BookmarkViewModelTest {
 
     @Test
     fun getBookmars() {
-        val bookmarkEntities = viewModel.getBookmars()
+        val bookmarkEntities = viewModel.getBookmarks()
         assertNotNull(bookmarkEntities)
         assertEquals(5, bookmarkEntities.size)
     }

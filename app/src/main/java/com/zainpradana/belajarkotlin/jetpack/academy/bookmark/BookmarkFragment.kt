@@ -9,11 +9,11 @@ import androidx.core.app.ShareCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zainpradana.belajarkotlin.jetpack.academy.R
+import com.zainpradana.belajarkotlin.jetpack.academy.academies.viewmodel.ViewModelFactory
 import com.zainpradana.belajarkotlin.jetpack.academy.bookmark.adapter.BookmarkAdapter
 import com.zainpradana.belajarkotlin.jetpack.academy.bookmark.viewmodel.BookmarkViewModel
 import com.zainpradana.belajarkotlin.jetpack.academy.data.CourseEntity
 import com.zainpradana.belajarkotlin.jetpack.academy.databinding.FragmentBookmarkBinding
-import com.zainpradana.belajarkotlin.jetpack.academy.utils.DataDummy
 
 class BookmarkFragment : Fragment(), BookmarkFragmentCallback {
 
@@ -33,8 +33,9 @@ class BookmarkFragment : Fragment(), BookmarkFragmentCallback {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[BookmarkViewModel::class.java]
-            val courses = viewModel.getBookmars()
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            val viewModel = ViewModelProvider(this, factory)[BookmarkViewModel::class.java]
+            val courses = viewModel.getBookmarks()
             val adapter = BookmarkAdapter(this)
             adapter.setCourses(courses)
 

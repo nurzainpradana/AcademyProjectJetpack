@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.zainpradana.belajarkotlin.jetpack.academy.R
-import com.zainpradana.belajarkotlin.jetpack.academy.academy.AcademyFragment
+import com.zainpradana.belajarkotlin.jetpack.academy.academies.AcademyFragment
 import com.zainpradana.belajarkotlin.jetpack.academy.bookmark.BookmarkFragment
 
 class SectionsPageAdapter(private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
